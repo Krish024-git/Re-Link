@@ -402,10 +402,8 @@
             lightboxModal.classList.remove('modal-visible');
             lightboxContent.innerHTML = ''; // Stop video/audio
         }
-        // -------------------------------
-
-
-        // Archive Memory (File Upload Simulation)
+        
+        
         function archiveMemory() {
             const titleInput = document.getElementById('title');
             const tagsInput = document.getElementById('tags');
@@ -451,7 +449,7 @@
                     let imageSrc = `https://placehold.co/600x400/fdba74/374151?text=Note:+${file.name}`;
                     let fileTypeColor = 'bg-blue-100 text-blue-800'; // Default for Notes
 
-                    // Create a Blob URL for the file (for preview and download)
+                   
                     const fileUrl = URL.createObjectURL(file);
 
                     if (file.type.startsWith('image/')) {
@@ -498,10 +496,10 @@
                         </div>
                     `;
                     
-                    // Add the new card to the top of the grid
+              
                     document.getElementById('memoryGrid').prepend(newCard);
 
-                } // --- End of loop ---
+                } 
 
                 // 3. Hide loading, show success
                 modalLoading.classList.add('hidden');
@@ -512,16 +510,16 @@
                     closeModal();
                 }, 1500);
 
-            }, 1000); // Shortened simulation to 1 second
+            }, 1000); 
         }
 
-        // Dropzone listeners
+    
         const dropzone = document.getElementById('dropzone');
         const fileNameDisplay = document.getElementById('fileName');
 
-        // Handle file selection from buttons
+        
         function handleFileSelect(files) {
-            selectedFilesCache = files; // Store files in cache
+            selectedFilesCache = files; 
 
             if (files.length === 0) {
                 fileNameDisplay.textContent = '';
@@ -543,7 +541,7 @@
             document.getElementById('dropzone').classList.remove('shake-error', 'border-red-500');
         }
 
-        // Drag and drop event handlers
+      
         ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
             dropzone.addEventListener(eventName, preventDefaults, false);
         });
@@ -566,11 +564,10 @@
             const files = dt.files;
             
             if (files.length > 0) {
-                handleFileSelect(files); // Use the same function to display name and cache files
+                handleFileSelect(files); 
             }
         }, false);
         
-        // --- Filter Logic & Event Delegation (on DOM Load) ---
         document.addEventListener('DOMContentLoaded', () => {
             const filterButtons = document.querySelectorAll('.filter-btn');
             const memoryGrid = document.getElementById('memoryGrid'); 
@@ -602,20 +599,19 @@
                 });
             });
 
-            // Event Delegation for Delete and Open
             memoryGrid.addEventListener('click', (e) => {
                 const target = e.target;
 
                 // 1. Check for Delete Button click
                 const deleteButton = target.closest('.delete-btn');
                 if (deleteButton) {
-                    e.stopPropagation(); // Stop click from bubbling to the card
+                    e.stopPropagation(); 
                     const cardToDelete = deleteButton.closest('.memory-card');
                     cardToDelete.style.transform = 'scale(0.8)';
                     cardToDelete.style.opacity = '0';
                     setTimeout(() => {
                         cardToDelete.remove();
-                    }, 300); // Remove after animation
+                    }, 300); 
                     return;
                 }
 
