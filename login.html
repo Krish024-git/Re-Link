@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Re:Link</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <div class="min-h-screen flex items-center justify-center px-4">
+        <div class="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            
+            <div class="text-center mb-8">
+                <a href="index.html" class="text-3xl font-extrabold text-indigo-600">
+                    <i class="fas fa-link"></i> Re:Link
+                </a>
+                <h2 class="mt-4 text-2xl font-bold text-gray-900">
+                    Welcome to Your Vault
+                </h2>
+                <p class="text-gray-600">Sign in to continue</p>
+            </div>
+
+            <form id="login-form" action="vault.html" method="GET">
+                <div class="space-y-6">
+                    
+                    <button type="button" class="w-full flex justify-center items-center gap-3 py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
+                        <img class="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google logo">
+                        <span class="font-medium text-gray-700">Sign in with Google</span>
+                    </button>
+
+                    <div class="flex items-center">
+                        <div class="flex-grow border-t border-gray-200"></div>
+                        <span class="mx-4 text-sm text-gray-400">or</span>
+                        <div class="flex-grow border-t border-gray-200"></div>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                        <input type="email" id="email" name="email" required
+                               class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between">
+                            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                            <a href="#" class="text-sm text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+                        </div>
+                        <input type="password" id="password" name="password" required
+                               class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                    </div>
+
+                    <button type="submit"
+                            class="w-full bg-indigo-600 text-white py-3 rounded-lg font-medium hover:bg-indigo-700 transition duration-300">
+                        Sign In
+                    </button>
+
+                    <p class="text-center text-sm text-gray-600">
+                        Don't have an account? 
+                        <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
+                            Sign Up
+                        </a>
+                    </p>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        // This is a simulation. A real login would be handled by a backend.
+        // For this demo, clicking "Sign In" will just redirect to vault.html.
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            // In a real app, you'd prevent default, send an API request,
+            // and only redirect on success.
+            console.log('Simulating login...');
+        });
+    </script>
+
+</body>
+</html>
